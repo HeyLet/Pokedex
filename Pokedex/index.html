@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PokeDex</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="pokedex.js"></script>
+
+
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>POKEDEX</h1>
+        </header>
+        <ol id="pokedex"></ol>
+    </div>
+    <main>
+        <form class="pokedex-control">
+
+            <div class="form-control">
+                <label for="filtrar-nome">Nome:</label>
+                <input type="text" id="filtrar-nome">
+            </div>
+
+            <div class="form-control">
+                <label for="filtrar-tipo">Tipo:</label>
+                <select id="filtrar-tipo">
+                    <option value="all">All</option>
+                    <option value="bug">Bug</option>
+                    <option value="dragon">Dragon</option>
+                    <option value="electric">Electric</option>
+                    <option value="fairy">Fairy</option>
+                    <option value="fighting">Fighting</option>
+                    <option value="fire">Fire</option>
+                    <option value="flying">Flying</option>
+                    <option value="ghost">Ghost</option>
+                    <option value="grass">Grass</option>
+                    <option value="ground">Ground</option>
+                    <option value="ice<">Ice</option>
+                    <option value="normal">Normal</option>
+                    <option value="poison">Poison</option>
+                    <option value="psychic">Psychic</option>
+                    <option value="steel">Steel</option>
+                    <option value="water">Water</option>
+                    <option value="rock">Rock</option>                    
+                    </select>
+            </div>
+
+
+            <div class="form-control">
+                <label for="ordem">Ordem:</label>
+                <select id="ordem">
+                    <option>Mais baixo (primeiro)</option>
+                    <option>Mais alto (primeiro)</option>
+                    <option>A-Z</option>
+                    <option>Z-A</option>
+                </select>
+            </div>
+
+        </form>
+        <ul id="result"></ul>
+    </main>
+
+
+</body>
+
+</html>

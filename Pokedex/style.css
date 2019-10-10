@@ -1,0 +1,147 @@
+header {
+    background: #0d0c17;
+    padding: .5rem 1rem;
+    text-align: center;
+    text-shadow: 3px 0 0 #2c3b5b, -3px 0 0 #2c3b5b, 0 3px 0 #2c3b5b, 0 -3px 0 #2c3b5b, 2px 2px #2c3b5b, -2px -2px 0 #2c3b5b, 2px -2px 0 #2c3b5b, -2px 2px 0 #2c3b5b;
+    color: #fff;
+    letter-spacing: 10px;
+    margin-bottom: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    border: 3px solid #e0e0e0;
+    box-shadow: 0 4px 4px 2px #989898;
+    -moz-box-shadow: 0 4px 4px 2px #989898;
+    -webkit-box-shadow: 0 0px 8px 5px #989898;
+}
+
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+main {
+    margin-top: 2rem;
+    animation: loading-page 2s;
+}
+
+.pokedex-control {
+    margin: 4rem 0 3rem;
+    display: grid;
+    grid-template-columns: 17rem;
+    grid-gap: .5rem;
+    justify-content: center;
+}
+
+@media (min-width: 840px) {
+    .pokedex-control {
+        grid-template-columns: repeat(3, 17rem);
+    }
+}
+
+.pokedex-control .form-control {
+    margin: 0 .5rem;
+    font-size: 1.1rem;
+    display: grid;
+    grid-template-columns: 3rem minmax(13rem, 15rem);
+    grid-gap: .5rem;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+@media (min-width: 840px) {
+    .pokedex-control .form-control {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 840px) {
+    .pokedex-control .form-control {
+        grid-template-columns: 3rem minmax(13rem, 15rem);
+    }
+}
+
+.pokedex-control #filtrar-nome {
+    border: none;
+    border-bottom: 1px solid #c0c0c0;
+    outline: none;
+    transition: all .2s;
+}
+
+.pokedex-control #filtrar-nome:focus {
+    border-bottom: 1px solid #000;
+}
+
+.pokedex-control .form-control label+* {
+    outline: none;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+body {
+    margin: 0;
+    background-color: #0d0c17;
+    font-family: arial, sans-serif;
+}
+
+.card {
+    list-style: none;
+    padding: 40px;
+    background-color: #cecbcb;
+    color: #222;
+    text-align: center;
+}
+
+#result {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, 260px);
+    padding: 1rem;
+    justify-content: center;
+}
+
+.card:hover {
+    animation: bounce 0.5s linear;
+}
+
+.card-title {
+    text-transform: capitalize;
+    margin-bottom: 0px;
+    font-size: 26px;
+    font-weight: normal;
+}
+
+.card-subtitle {
+    margin-top: 5px;
+    color: #666;
+    font-weight: lighter;
+}
+
+.card-image {
+    height: 180px;
+}
+
+@keyframes bounce {
+    20% {
+        transform: translateY(-6px);
+    }
+    40% {
+        transform: translateY(0px);
+    }
+    80% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* @media (min-width: 831px) {
+    body {
+        position: relative;
+        height: auto;
+        min-height: 100vh;
+    }
+} */
