@@ -91,6 +91,7 @@ body {
     background-color: #cecbcb;
     color: #222;
     text-align: center;
+    cursor: pointer;
 }
 
 #result {
@@ -137,11 +138,46 @@ body {
     }
 }
 
+#popUp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
 
-/* @media (min-width: 831px) {
-    body {
-        position: relative;
-        height: auto;
-        min-height: 100vh;
-    }
-} */
+#popUp .fundo {
+    background-color: #7b3692;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.5;
+}
+
+#popUp>div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 20%;
+}
+
+#popUp>div>div {
+    background-color: #FFF;
+    width: 50%;
+    height: 60%;
+    padding: 40px;
+    position: relative;
+    border-radius: 10px;
+}
+
+#btnFecharPop,
+#btnFecharPop:visited,
+#btnFecharPop:hover {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}

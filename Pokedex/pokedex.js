@@ -1,5 +1,3 @@
-// var x;
-
 window.onload = function() {
     const pokedex = document.getElementById("result");
     var pokemons;
@@ -31,8 +29,8 @@ window.onload = function() {
             .map(
                 (pokeman) =>
                 `
-            <li class="card">
-                <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
+            <li class="card" onclick=\"exibirPopUp(${pokeman.id})\">
+                <h2 class="card-title">${pokeman.id}. ${pokeman.name} ${pokeman.index}</h2>
                 <img class="card-image" src="${pokeman.image}"/>
                 <p class="card-subtitle">Type: ${pokeman.type}</p>
             </li>
@@ -73,8 +71,6 @@ window.onload = function() {
 
         function getPokemonByOrdem() {
             var ordem = document.getElementById("ordem").selectedIndex;
-
-            // x = pokemons;
 
             var ordenacao;
             switch (ordem) {
@@ -135,4 +131,16 @@ window.onload = function() {
         document.getElementById("filtrar-tipo").addEventListener("change", getPokemonsByType)
         document.getElementById("ordem").addEventListener("change", getPokemonByOrdem)
     }
+
+
 };
+
+function exibirPopUp(id) {
+    document.getElementById("popUp").style.display = "block";
+    document.getElementById("infoPopUp").innerHTML = id;
+}
+
+function fecharPop() {
+    document.getElementById("popUp").style.display = "none";
+    document.getElementById("infoPopUp").innerHTML = "";
+}
