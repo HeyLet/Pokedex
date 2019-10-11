@@ -30,7 +30,7 @@ window.onload = function() {
                 (pokeman) =>
                 `
             <li class="card" onclick=\"exibirPopUp(${pokeman.id})\">
-                <h2 class="card-title">${pokeman.id}. ${pokeman.name} ${pokeman.index}</h2>
+                <h2 class="card-title">${pokeman.id}. ${pokeman.name} </h2>
                 <img class="card-image" src="${pokeman.image}"/>
                 <p class="card-subtitle">Type: ${pokeman.type}</p>
             </li>
@@ -50,7 +50,7 @@ window.onload = function() {
             var nome = document.getElementById("filtrar-nome").value;
 
             displayPokemon(pokemons.filter(function(obj) {
-                if (obj.name.indexOf(nome) >= 0)
+                if (obj.name.indexOf(nome) >= 0 || nome == obj.id)
                     return true;
                 return false;
             }))
@@ -138,6 +138,8 @@ window.onload = function() {
 function exibirPopUp(id) {
     document.getElementById("popUp").style.display = "block";
     document.getElementById("infoPopUp").innerHTML = id;
+
+
 }
 
 function fecharPop() {
