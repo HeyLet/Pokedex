@@ -34,7 +34,7 @@ window.onload = function() {
                 <img class="card-image" src="${pokeman.image}"/>
                 </li>
                 `
-                // <p class="card-subtitle">Type: ${pokeman.type}</p>
+
             )
             .join('');
         pokedex.innerHTML = pokemonString;
