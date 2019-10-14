@@ -1,6 +1,6 @@
+var pokemons;
 window.onload = function() {
     const pokedex = document.getElementById("result");
-    var pokemons;
     const fetchPokemon = (callback) => {
         const promises = [];
         for (let i = 1; i <= 802; i++) {
@@ -32,9 +32,9 @@ window.onload = function() {
             <li class="card" onclick=\"exibirPopUp(${pokeman.id})\">
                 <h2 class="card-title">${pokeman.id}. ${pokeman.name} </h2>
                 <img class="card-image" src="${pokeman.image}"/>
-                <p class="card-subtitle">Type: ${pokeman.type}</p>
-            </li>
-        `
+                </li>
+                `
+                // <p class="card-subtitle">Type: ${pokeman.type}</p>
             )
             .join('');
         pokedex.innerHTML = pokemonString;
@@ -137,8 +137,13 @@ window.onload = function() {
 
 function exibirPopUp(id) {
     document.getElementById("popUp").style.display = "block";
-    document.getElementById("infoPopUp").innerHTML = id;
 
+    let pokemon = pokemons.filter(x => x.id == id)[0];
+
+    document.getElementById("infoPopUp").innerHTML += " " + `<h2 class="card-title">${pokemon.id}. ${pokemon.name} </h2>`;
+    document.getElementById("infoPopUp").innerHTML += " " + `<img class="card-image" src="${pokemon.image}"/>`;
+    document.getElementById("infoPopUp").innerHTML += " " + `<p class="card-subtitle">Tipo: ${pokemon.type}</p>`;
+    document.getElementById("infoPopUp").innerHTML += " " + `<p class="card-subtitle">Altura: ${pokemon.height}</p>`;
 
 }
 
