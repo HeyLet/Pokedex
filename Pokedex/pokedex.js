@@ -1,15 +1,16 @@
 var pokemons;
+//CARREGAMENTO DE PAGINA
 window.onload = function() {
     const pokedex = document.getElementById("result");
-    const fetchPokemon = (callback) => {
+    const fetchPokemon = (callback) => { //callback é passada como argumento de outra função e chamada quando um evento for acontecido
         const promises = [];
-        for (let i = 1; i <= 802; i++) {
+        for (let i = 1; i <= 802; i++) { //número de pokemons
             const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
             promises.push(fetch(url).then((res) => res.json()));
         }
+        //FUNÇÃO PARA MAPEAR O POKEDEX
+        Promise.all(promises).then((results) => { //promise é um objeto usado para processamento assíncrono
 
-        Promise.all(promises).then((results) => {
-            console.log(results);
             pokemons = results.map((data) => ({
                 name: data.name,
                 id: data.id,
@@ -24,7 +25,7 @@ window.onload = function() {
     };
 
     const displayPokemon = (pokemon) => {
-        console.log(pokemon);
+
         const pokemonString = pokemon
             .map(
                 (pokeman) =>
@@ -42,20 +43,19 @@ window.onload = function() {
 
     fetchPokemon(setEvent);
 
-    function setEvent() {
+    function setEvent() { //seta os eventos na tela para fazer o load
 
         displayPokemon(pokemons);
-
+        //FUNÇÃO PARA FILTRAR O NOME E NUMERO DO POKEMON
         function getPokemonsByName() {
             var nome = document.getElementById("filtrar-nome").value;
-
             displayPokemon(pokemons.filter(function(obj) {
                 if (obj.name.indexOf(nome) >= 0 || nome == obj.id)
                     return true;
                 return false;
             }))
         }
-
+        //FUNÇÃO PARA FILTRAR O TIPO
         function getPokemonsByType() {
             var tipo = document.getElementById("filtrar-tipo").value;
 
@@ -68,7 +68,7 @@ window.onload = function() {
             }))
         }
 
-
+        //PESQUISAR PELA ORDEM DO POKEDEX
         function getPokemonByOrdem() {
             var ordem = document.getElementById("ordem").selectedIndex;
 
@@ -134,7 +134,7 @@ window.onload = function() {
 
 
 };
-
+//MODAL PARA EXIBIR INFORMAÇÕES AO CLICAR NO CARD
 function exibirPopUp(id) {
     document.getElementById("popUp").style.display = "block";
 
@@ -146,7 +146,7 @@ function exibirPopUp(id) {
     document.getElementById("infoPopUp").innerHTML += " " + `<p class="card-subtitle">Altura: ${pokemon.height}</p>`;
 
 }
-
+//FUNÇÃO PARA FECHAR MODAL
 function fecharPop() {
     document.getElementById("popUp").style.display = "none";
     document.getElementById("infoPopUp").innerHTML = "";
